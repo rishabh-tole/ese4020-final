@@ -1,0 +1,9 @@
+{
+  "variant": "L1",
+  "seed": 0,
+  "params": 88365,
+  "train_minutes": 5.768305830160776,
+  "peak_memory_gb": 2.329460736,
+  "device": "mps",
+  "train_videos": 971
+}

@@ -1,0 +1,59 @@
+{
+  "model": {
+    "variant": "L1",
+    "num_slots": 11,
+    "hidden": 64,
+    "slot_dim": 32,
+    "decoder_hidden": 64,
+    "gru_hidden": 32,
+    "iters_first": 3,
+    "iters_next": 2,
+    "mask_ratio": 0.0,
+    "slot_penalty": 0.0
+  },
+  "settings": {
+    "clustering": {
+      "num_clusters": 11,
+      "pca_components": 6,
+      "pos_weight": 1.0,
+      "pca_fit_frames": 2000,
+      "kmeans_iters": 50,
+      "linkage": "ward"
+    },
+    "model": {
+      "num_slots": 11,
+      "hidden": 64,
+      "slot_dim": 32,
+      "decoder_hidden": 64,
+      "gru_hidden": 32,
+      "iters_first": 3,
+      "iters_next": 2,
+      "mask_ratio": 0.3,
+      "slot_penalty": 0.1
+    },
+    "train": {
+      "lr": 0.0001,
+      "batch_size": 8,
+      "window": 6,
+      "steps": 2000,
+      "grad_clip": 1.0,
+      "log_every": 50,
+      "val_every": 500,
+      "val_videos": 32
+    },
+    "eval": {
+      "lengths": [
+        6,
+        12,
+        24
+      ],
+      "batch_videos": 8,
+      "bootstrap": 1000,
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    }
+  }
+}

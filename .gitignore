@@ -1,0 +1,9 @@
+data/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+results/runs/*/model.pt
+results/tuning/
+.DS_Store

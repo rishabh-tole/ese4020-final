@@ -1,0 +1,37 @@
+# Defaults for every rung. Values marked "tuned" are chosen on the 500-video validation
+# split by `python -m slotcourse.tune` and should be copied back here before the test run.
+
+clustering:            # C1-C3 share features so the comparison isolates the clustering step
+  num_clusters: 11     # tuned; MOVi-A has <=10 objects + background
+  pca_components: 6    # tuned
+  pos_weight: 1.0      # tuned; scale on standardized row/col before PCA
+  pca_fit_frames: 2000 # random training frames used to fit the scaler + PCA
+  kmeans_iters: 50
+  linkage: ward
+
+model:                 # L1-L4 (see slotcourse.models.video.ModelConfig)
+  num_slots: 11        # matched to clustering.num_clusters
+  hidden: 64
+  slot_dim: 32         # slimmed for laptop (~0.14 s/step on M3)
+  decoder_hidden: 64
+  gru_hidden: 32
+  iters_first: 3
+  iters_next: 2
+  mask_ratio: 0.3      # tuned (L3, L4)
+  slot_penalty: 0.1    # tuned (L4)
+
+train:
+  lr: 1.0e-4           # as in Slot-BERT
+  batch_size: 8
+  window: 6            # train on 6-frame windows, evaluate on all 24
+  steps: 2000          # ~5 min per run on M3 16GB
+  grad_clip: 1.0
+  log_every: 50
+  val_every: 500
+  val_videos: 32
+
+eval:
+  lengths: [6, 12, 24]
+  batch_videos: 8
+  bootstrap: 1000
+  seeds: [0, 1, 2]

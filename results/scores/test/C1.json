@@ -1,0 +1,34 @@
+{
+  "method": "C1",
+  "seed": 0,
+  "split": "test",
+  "num_videos": 250,
+  "segment_minutes_24f": 0.1557220180829366,
+  "eval_minutes": 0.16854876279830933,
+  "peak_rss_gb": 3.281911808,
+  "params": 0,
+  "train_minutes": 0.0,
+  "pca_explained": 0.9638065695762634,
+  "clustering": {
+    "num_clusters": 11,
+    "pca_components": 6,
+    "pos_weight": 1.0,
+    "pca_fit_frames": 2000,
+    "kmeans_iters": 50,
+    "linkage": "ward"
+  },
+  "means": {
+    "fg_ari_L6": 0.4163236361561698,
+    "fg_ari_v_L6": 0.08533062095908067,
+    "mbo_f_L6": 0.3381273884563544,
+    "mbo_v_L6": 0.059275807450250156,
+    "fg_ari_L12": 0.42258186756255345,
+    "fg_ari_v_L12": 0.04582962589407055,
+    "mbo_f_L12": 0.3359162943951197,
+    "mbo_v_L12": 0.038111708529361854,
+    "fg_ari_L24": 0.4329437402901623,
+    "fg_ari_v_L24": 0.026953781498970715,
+    "mbo_f_L24": 0.34317332188085187,
+    "mbo_v_L24": 0.02814528616105528
+  }
+}
